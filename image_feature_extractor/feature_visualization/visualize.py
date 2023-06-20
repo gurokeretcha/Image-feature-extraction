@@ -14,6 +14,7 @@ patch_size = 14 # patchsize=14
 # # feat_dim
 
 def feature_vis(features, folder_path):
+    features = features[:4,:,:]
     patch_h = 518//patch_size
     patch_w = 518//patch_size
     feat_dim = features.shape[-1]
