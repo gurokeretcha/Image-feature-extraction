@@ -62,14 +62,16 @@ def extract_features(data_path, model_name):
     print('total number of images: ', len(dataset))
     print('total number of batched: ', len(train_dataloader))
     try:
-        if model_name not in ['dinov2_small','dinov2_medium','dinov2_large']:
+        if model_name not in ['dinov2_small','dinov2_big','dinov2_large', 'dinov2_giant']:
             raise ValueError("Invalid input. Please choose from the available options.")
 
         if model_name=='dinov2_small':
             dinov2_vitl14 = torch.hub.load('facebookresearch/dinov2', 'dinov2_vits14')
-        elif model_name=='dinov2_medium':
-            dinov2_vitl14 = torch.hub.load('facebookresearch/dinov2', 'dinov2_vitl14')
+        elif model_name=='dinov2_big':
+            dinov2_vitl14 = torch.hub.load('facebookresearch/dinov2', 'dinov2_vitb14')
         elif model_name=='dinov2_large':
+            dinov2_vitl14 = torch.hub.load('facebookresearch/dinov2', 'dinov2_vitl14')
+        elif model_name=='dinov2_giant':
             dinov2_vitl14 = torch.hub.load('facebookresearch/dinov2', 'dinov2_vitg14')
         else:
             print('please insert correct name of the model. (available names: dinov2_small','dinov2_medium','dinov2_large')

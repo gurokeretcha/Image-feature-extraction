@@ -1,1 +1,1 @@
-from .dinov2 import extract_features
+from .dinov2 import *

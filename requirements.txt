@@ -3,3 +3,5 @@ torch==2.0.1+cpu
 scikit-learn==1.2.2
 matplotlib==3.7.1
 tqdm==4.65.0
+datasets
+timm
